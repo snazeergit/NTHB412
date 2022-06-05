@@ -30,9 +30,9 @@ public class SaveObjectTest {
 			
 			//Prepare entity object
 			Product prod = new Product();
-			prod.setPid(1001);
-			prod.setPname("table");
-			prod.setPrice(5678.5f);
+			prod.setPid(1002);
+			prod.setPname("tablespoon");
+			prod.setPrice(568.5f);
 			prod.setQty(1.0f);
 			
 			//Save object

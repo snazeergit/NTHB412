@@ -10,8 +10,14 @@
 		<property name="hibernate.connection.username">System</property>
 		<property name="hibernate.connection.password">VMware1</property>
 
+		<!-- hibernate properties -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+
+
 		<!-- Mapping File Name -->
 		<mapping resource="com/nt/entity/Product.hbm.xml" />
+
 
 	</session-factory>
 </hibernate-configuration>
