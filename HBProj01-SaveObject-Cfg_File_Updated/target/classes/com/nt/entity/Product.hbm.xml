@@ -2,10 +2,13 @@
 <!DOCTYPE hibernate-mapping PUBLIC 
 "-//Hibernate/Hibernate Mapping DTD//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
 <hibernate-mapping>
-	<class name="com.nt.entity.Product" table="PRODUCT">
+	<class name="com.nt.entity.Product" ><!-- Table name is optional if its same as the Entity class name -->
 		<!-- O R Mapping -->
-		<id name="pid" column="PID" /><!-- singular ID Field cfg -->
+		<id name="pid" column="PID" ><!-- singular ID Field cfg -->
+			<generator class="increment"/>
+		</id>
 		<property name="pname" column="PNAME" />
 		<property name="price" column="PRICE" />
 		<property name="qty" column="QTY" />
