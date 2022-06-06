@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<!-- dynamic-insert true will make hibernate to generate sql query with only properties that we set in Client class, by default its false -->
+	<class name="com.nt.entity.Product" dynamic-insert="true">
+		<id name="pid" column="pid">
+			<generator class="increment" />
+		</id>
+		<property name="pname" column="pname" />
+		<property name="price" column="price" />
+		<property name="qty" column="qty" />
+
+	</class>
+
+</hibernate-mapping>
