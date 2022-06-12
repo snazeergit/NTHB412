@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- Once we specify proxy interface name using proxy attribute then Hibernate 
+		makes the session.load() to perform always lazy loading irrespective of lazy=true 
+		or false -->
+	<class name="com.nt.entity.Product" dynamic-insert="true" lazy="true" proxy="com.nt.entity.IProduct">
+		<id name="pid">
+			<generator class="increment" />
+		</id>
+		<property name="pname" />
+		<property name="price" />
+		<property name="qty" />
+	</class>
+	
+</hibernate-mapping>
