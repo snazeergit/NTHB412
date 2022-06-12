@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<!-- If the entity class name is same as the DB Table then specifying Table name is OPTIONAL -->
+	<class name="com.nt.entity.Product" dynamic-insert="true" lazy="true">
+	<!-- If the Entity class property names are same as the DB Table column names then specifying the column names is also purely OPTIONAL  -->
+		<id name="pid">
+			<generator class="increment" />
+		</id>
+		<property name="pname"/>
+		<property name="price"/>
+		<property name="qty" />
+	</class>
+
+</hibernate-mapping>
