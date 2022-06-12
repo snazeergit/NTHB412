@@ -6,8 +6,8 @@
 
 		<!-- JDBC Properties -->
 		
-		<!-- word hibernate in property name is optional -->
-		<!-- Driver class name is optional refer page 11 in hibernate notes-->
+		<!-- word Hibernate in property name is optional -->
+		<!-- Specifying the Driver class name is optional if you are using JDBC4, ojdbc6/7/8..jar file are given based on JDBC 4.-->
 		<!-- <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property> -->
 		
 		<property name="connection.url">jdbc:mysql:///nthb412db</property>
