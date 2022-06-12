@@ -7,7 +7,7 @@
 	<!-- Once we specify proxy interface name using proxy attribute then Hibernate 
 		makes the session.load() to perform always lazy loading irrespective of lazy=true 
 		or false -->
-	<class name="com.nt.entity.Product" dynamic-insert="true" lazy="true" proxy="com.nt.entity.IProduct">
+	<class name="com.nt.entity.Product" lazy="true" proxy="com.nt.entity.IProduct">
 		<id name="pid">
 			<generator class="increment" />
 		</id>
