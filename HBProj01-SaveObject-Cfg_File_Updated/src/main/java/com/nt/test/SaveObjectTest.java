@@ -35,10 +35,12 @@ public class SaveObjectTest {
 			prod.setPrice(568.5f);
 			prod.setQty(1.0f);
 			
-			//Save object
-			session.save(prod);// Gives persistence instruction to hibernate to save object(insert object data as the record)
+			//Save(-) method without generator in mapping file returns the Pid value 1002(Primary Key) as a serialized object
+			//Save(-) method with generator in mapping file returns the Max value in Pid column+1 (Primary Key column) as a serialized object
+			//Max value in Pid is 1009 then it will return 1010
+			Integer idVal =(Integer) session.save(prod);// Gives persistence instruction to hibernate to save object(insert object data as the record)
 			tx.commit();//internally calls con.commit() method to make insertion execution result permanent
-			System.out.println("Object is saved-(Record is inserted)");
+			System.out.println("Object is saved-(Record is inserted)"+idVal);
 		} catch (HibernateException he) {
 			he.printStackTrace();
 			tx.rollback();//internally calls con.rollback90 method to rollback the result of query execution.
