@@ -9,10 +9,10 @@ import org.hibernate.cfg.Configuration;
 import com.nt.entity.Product;
 
 //Using Try with Resource introduced in Java 9
-public class LoadAndDeleteObjectTest {
+public class SaveOrUpdateObjectTest {
 
 	@SuppressWarnings("deprecation")
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		//Bootstarp / Activate the hibernate
 		Configuration cfg = new Configuration();
 
@@ -24,21 +24,24 @@ public class LoadAndDeleteObjectTest {
 
 		// create Session obj 
 		Session session = factory.openSession();
+
 		Transaction tx = null;
 		try (factory; session) {//Introduced from java 9
-			//Prepare entity object
-			Product prod = new Product();
-			prod.setPid(1003);
-			prod.setPname("tablespoon");
-			prod.setPrice(58.5f);
-			prod.setQty(1.0f);
 
+			// begin Transaction
 			tx = session.beginTransaction();
+
+			//prepare entity object
+			Product prod = new Product();
+			prod.setPid(1002);//PID may or may not be available in Database table
+			prod.setPname("Bike");
+			prod.setQty(1.0f);
+			//delete Object
 			session.saveOrUpdate(prod);
 
+			//Commit the current resource transaction
 			tx.commit();
 			System.out.println("Record is saved or updated");
-
 		} // The SessionFactory, Session objs will be closed here automatically
 		catch (HibernateException he) {
 			he.printStackTrace();
@@ -48,6 +51,7 @@ public class LoadAndDeleteObjectTest {
 				System.out.println("Record is not saved or updated");
 			}
 		}
+
 	}
 
 }
