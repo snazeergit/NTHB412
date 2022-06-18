@@ -33,10 +33,10 @@ public class SaveOrUpdateObjectTest {
 
 			//prepare entity object
 			Product prod = new Product();
-			prod.setPid(1002);//PID may or may not be available in Database table
+			prod.setPid(5);//PID may or may not be available in Database table
 			prod.setPname("Bike");
 			prod.setQty(1.0f);
-			//delete Object
+			//Save or update Object
 			session.saveOrUpdate(prod);
 
 			//Commit the current resource transaction

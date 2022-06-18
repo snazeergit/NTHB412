@@ -28,7 +28,7 @@ public class SaveOrUpdateObjectTest1 {
 		try (factory; session) {//Introduced from java 9
 			//Prepare entity object
 			Product prod = new Product();
-			prod.setPid(1003);
+			prod.setPid(6);
 			prod.setPname("tablespoon");
 			prod.setPrice(58.5f);
 			prod.setQty(1.0f);

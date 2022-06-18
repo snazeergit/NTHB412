@@ -4,12 +4,17 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
+
 	<class name="com.nt.entity.Product" dynamic-update="true"
-		dynamic-insert="true" lazy="true">
-		<id name="pid" unsaved-value="1003"/>
+		dynamic-insert="true">
+
+		<id name="pid" unsaved-value="5">
+			<generator class="increment"  />
+		</id>
 		<property name="pname" />
 		<property name="price" />
 		<property name="qty" />
+
 	</class>
 
 </hibernate-mapping>
