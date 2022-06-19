@@ -28,14 +28,15 @@ public class Approach_2_MergeObjectTest_Problem {
 				//Prepare entity object
 				Product prod2 = new Product();
 				prod2.setPid(10);
-				prod2.setPname("Hayabusa");
-				prod2.setPrice(100.0f);
-				prod2.setQty(1.0f);
+				prod2.setPname("Hayabusa1");
+				prod2.setPrice(1100.0f);
+				prod2.setQty(10.0f);
 
 				//The below two methods will tries to put another object(1003) same Product class in L1 Cache
 				//so NonUniqueObjectException will be raised
 				//session.save(prod2);
 				session.update(prod2);
+				//Product prod3 = session.merge(prod2);
 
 				System.out.println("Object is updated");
 				flag = true;
