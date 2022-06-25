@@ -18,7 +18,7 @@ public class HibernateUtil {
 		return factory;
 	}
 
-	public static Session getSession(SessionFactory factory){
+	public static Session getSession(){
 		Session session = null;
 		if (factory != null)
 			session = factory.openSession();

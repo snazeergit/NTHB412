@@ -10,7 +10,7 @@ import com.nt.utility.HibernateUtil;
 public class SaveObjectTest {
 	public static void main(String[] args) {
 		SessionFactory factory = HibernateUtil.getSessionFactory();
-		Session session = HibernateUtil.getSession(factory);
+		Session session = HibernateUtil.getSession();
 		Transaction tx = null;
 		try (factory; session) {
 			tx = session.beginTransaction();
